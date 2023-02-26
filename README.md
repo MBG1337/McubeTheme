@@ -14,7 +14,7 @@
 # Installation Guide
 
 Go to your vps where the panel is hosted and run
-```bash <(curl -s https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/install.sh)```
+```bash <(curl -s https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/install.sh) ```
 **NOTE USE sudo su if you are not root**
 
 After Executing the script, you would get a UI like this :
