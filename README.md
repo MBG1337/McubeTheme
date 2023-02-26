@@ -25,10 +25,9 @@ After Executing the script, you would get a UI like this :
 
 To install you need to type 1 and press enter, after that the script it self will install the theme without any further inputs.
 
-**If you encounter an error, re-run the script and type 3 and press enter and it will restore the panel with its old backup**
+**If you encounter an error, re-run the script and type 3 and press enter and it will restore the panel with the panel's old backup created during the installation.**
 
 # Creators
-#Creators
 MBG & Angelillo15
 
 # Support
