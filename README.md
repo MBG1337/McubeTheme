@@ -11,7 +11,7 @@
 
 `Want your host to be here? Dm me on discord MBG#1337`
 
-#Installation Guide
+# Installation Guide
 
 Go to your vps where the panel is hosted and run
 ```bash <(curl -s https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/install.sh)```
