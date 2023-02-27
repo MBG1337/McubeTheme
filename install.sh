@@ -21,12 +21,12 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/MineCube.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     rm /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
+    rm /var/www/pterodactyl/resources/views/admin/index.blade.php
+    rm /var/www/pterodactyl/
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
-    rm /var/www/pterodactyl/resources/views/admin/index.blade.php
-    cd McubeTheme
-    mv /resources/scripts/index.blade.php /var/www/pterodactyl/resources/views/admin/
+    mv resources/scripts/index.blade.php /var/www/pterodactyl/resources/views/admin/
 
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     apt update
