@@ -27,7 +27,7 @@
             </div>
             <div class="box-body">
                 @if ($version->isLatestPanel())
-                    You are running Pterodactyl Panel version <code>{{ config('app.version') }}</code>. Your panel is up-to-date! | You are running MineCube Theme Version 1.0
+                    You are running Pterodactyl Panel version <code>{{ config('app.version') }}</code>. Your panel is up-to-date! | You are using MineCube Theme Version <code>2.0</code>
                 @else
                     Your panel is <strong>not up-to-date!</strong> The latest version is <a href="https://github.com/Pterodactyl/Panel/releases/v{{ $version->getPanel() }}" target="_blank"><code>{{ $version->getPanel() }}</code></a> and you are currently running version <code>{{ config('app.version') }}</code>.
                 @endif
