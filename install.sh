@@ -21,7 +21,6 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/MineCube.css
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     rm /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
-    rm /var/www/pterodactyl/
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
