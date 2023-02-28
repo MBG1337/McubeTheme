@@ -38,7 +38,7 @@ installTheme(){
     yarn build:production
     sudo php artisan optimize:clear
     clear
-    echo Thank you for installing the theme!
+    echo "(っ◔◡◔)っ ♥ Thank you for installing the theme ♥"
 }
 
 installThemeQuestion(){
