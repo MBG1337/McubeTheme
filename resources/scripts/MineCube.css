@@ -2,11 +2,11 @@
   --main-color: #191923;
   --secundary-color: #14141c;
   --tertiary-color: #4686a8;
-  --bacground-url: url("https://media.discordapp.net/attachments/1122384153107759105/1133706019478966282/image.png");
+  --bacground-color: #0E0E1F
 }
 
 html {
-  background-image: var(--bacground-url);
+  background-color: var(--bacground-color);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center;
