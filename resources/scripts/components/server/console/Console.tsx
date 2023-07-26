@@ -192,7 +192,8 @@ export default () => {
   return (
     <div className={classNames(styles.terminal, 'relative')}>
       <SpinnerOverlay visible={!connected} size={'large'} />
-      <div className={classNames(styles.container, styles.overflows_container, { 'rounded-b': !canSendCommands })}>
+      {/* Apply the border color here */}
+      <div className={classNames(styles.container, 'rounded-b', styles.overflows_container)} style={{ borderColor: '#080614' }}>
         <div className={'h-full'}>
           <div id={styles.terminal} ref={ref} />
         </div>
