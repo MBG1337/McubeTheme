@@ -20,6 +20,7 @@ bash <(curl -s https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/i
  ```
 **⚠️ use `sudo su` if you are not root**
 
+`I am not responsible for any issues occured during installations.`
 After Executing the script, you would get a UI like this :
 
 ![UI](https://media.discordapp.net/attachments/954377411041054750/1079437328596082759/image.png)
@@ -29,9 +30,9 @@ To install you need to type 1 and press enter, after that the script it self wil
 **If you encounter an error, re-run the script and type 3 and press enter and it will restore the panel with the panel's old backup created during the installation.**
 
 # Creators
-MBG & Angelillo15
+MBG
 
 # Support
-If you like the theme please dont forget to start the project and if you encounter any error while installing the theme, dont hesitate to contact us [here](https://discord.gg/n93Jk69ge5)
+If you like the theme please dont forget to star the project and if you encounter any error while installing the theme, dont hesitate to contact us [here](https://discord.gg/minecube)
 
 # Thank you for using the theme!
