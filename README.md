@@ -10,7 +10,7 @@
 
 [MineCube](https://discord.gg/WvzNPpKr)
 
-`Want your host to be here? Dm me on discord MBG#1337`
+`Want your host to be here? Dm me on discord @mbgx`
 
 # Installation Guide
 
