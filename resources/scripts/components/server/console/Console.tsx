@@ -20,7 +20,7 @@ import 'xterm/css/xterm.css';
 import styles from './style.module.css';
 
 const theme = {
-  background: '#060b12',
+  background: '#fffff',
   cursor: 'transparent',
   black: th`colors.black`.toString(),
   red: '#E54B4B',
@@ -52,7 +52,7 @@ const terminalProps: ITerminalOptions = {
 };
 
 export default () => {
-  const TERMINAL_PRELUDE = '\u001b[1m\u001b[33mcontainer@pterodactyl~ \u001b[0m';
+  const TERMINAL_PRELUDE = '\u001b[1m\u001b[33mMineCube: \u001b[0m';
   const ref = useRef<HTMLDivElement>(null);
   const terminal = useMemo(() => new Terminal({ ...terminalProps }), []);
   const fitAddon = new FitAddon();
