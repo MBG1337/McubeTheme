@@ -1,7 +1,7 @@
 # MineCube Theme
 
 # Theme Preview
-![Preview 1]((https://media.discordapp.net/attachments/1132986922000728104/1133810285052960919/image.png?width=1380&height=671))
+![Preview 1](https://media.discordapp.net/attachments/1132986922000728104/1133810285052960919/image.png?width=1380&height=671)
 ![Preview 2](https://media.discordapp.net/attachments/1132986922000728104/1133810611197857793/image.png?width=1396&height=671)
 ![Preview 3](https://github.com/MBG1337/McubeTheme/assets/108623200/bf44ce29-216b-4d4a-a5c1-5a633102100b)
 
