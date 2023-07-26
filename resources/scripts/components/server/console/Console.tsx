@@ -20,7 +20,7 @@ import 'xterm/css/xterm.css';
 import styles from './style.module.css';
 
 const theme = {
-  background: '#101015',
+  background: '#030311',
   cursor: 'transparent',
   black: th`colors.black`.toString(),
   red: '#E54B4B',
