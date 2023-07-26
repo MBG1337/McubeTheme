@@ -22,11 +22,13 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/index.tsx
     rm /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
     rm /var/www/pterodactyl/resources/views/admin/index.blade.php
+    rm /var/www/pterodactyl/resources/scripts/routers/ServerRouter.tsx
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
     mv resources/scripts/index.blade.php /var/www/pterodactyl/resources/views/admin
-
+    mv resources/scripts/routers/ServerRouter.tsx /var/www/pterodactyl/resources/scripts/routers/ServerRouter.tsx
+    
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     apt update
     apt install -y nodejs
@@ -53,7 +55,7 @@ installThemeQuestion(){
 }
 
 repair(){
-    bash <(curl https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/repair.sh)
+    bash <(curl https://raw.githubusercontent.com/MBG1337/McubeTheme/main/repair.sh)
 }
 
 restoreBackUp(){
@@ -78,8 +80,8 @@ printf "${blue}  ██████   ██████  ███             
 echo ""
 echo "Copyright @MineCube 2023 by MBG"
 echo ""
-echo "Discord: https://discord.gg/WvzNPpKr"
-echo "Website: https://minecube.me"
+echo "Discord: https://discord.gg/minecube"
+echo "Website: https://minecubemc.xyz"
 echo ""
 echo "[1] Install theme"
 echo "[2] Restore backup"
