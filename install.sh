@@ -33,7 +33,7 @@ installTheme(){
     mv resources/scripts/routers/ServerRouter.tsx /var/www/pterodactyl/resources/scripts/routers/ServerRouter.tsx
     mv resources/scripts/components/auth/LoginContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
     mv resources/scripts/components/auth/LoginContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
-    mv public/themes/pterodactyl/css/pterodacty.css /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
+    mv public/themes/pterodactyl/pterodactyl.css /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
     
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     apt update
