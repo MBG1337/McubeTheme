@@ -36,7 +36,6 @@ import {
   faRocket,
   faTerminal,
 } from '@fortawesome/free-solid-svg-icons';
-
 export default () => {
   const match = useRouteMatch<{ id: string }>();
   const location = useLocation();
@@ -94,67 +93,62 @@ export default () => {
                           {/* Use the FontAwesome icon as follows */}
                           {route.name === 'Console' && (
                             <>
-                              <FontAwesomeIcon icon={faTerminal} /> Console
+                              <FontAwsomeIcon icon={faTerminal} />  Console
                             </>
                           )}
                           {route.name === 'Settings' && (
                             <>
-                              <FontAwesomeIcon icon={faCogs} /> Settings
+                              <FontAwesomeIcon icon={faCogs} />  Settings
                             </>
                           )}
                           {route.name === 'Databases' && (
                             <>
-                              <FontAwesomeIcon icon={faDatabase} /> Databases
+                              <FontAwesomeIcon icon={faDatabase} />  Databases
                             </>
                           )}
                           {route.name === 'Users' && (
                             <>
-                              <FontAwesomeIcon icon={faUserFriends} /> Users
+                              <FontAwesomeIcon icon={faUserFriends} />  Users
                             </>
                           )}
                           {route.name === 'Files' && (
                             <>
-                              <FontAwesomeIcon icon={faFileAlt} /> Files
+                              <FontAwesomeIcon icon={faFileAlt} />  Files
                             </>
                           )}
                           {route.name === 'Network' && (
                             <>
-                              <FontAwesomeIcon icon={faGlobe} /> Network
+                              <FontAwesomeIcon icon={faGlobe} />  Network
                             </>
                           )}
                           {route.name === 'Allocation' && (
                             <>
-                              <FontAwesomeIcon icon={faBuilding} /> Allocation
+                              <FontAwesomeIcon icon={faBuilding} />  Allocation
                             </>
                           )}
                           {route.name === 'Backups' && (
                             <>
-                              <FontAwesomeIcon icon={faReply} /> Backups
+                              <FontAwesomeIcon icon={faReply} />  Backups
                             </>
                           )}
                           {route.name === 'Server Details' && (
                             <>
-                              <FontAwesomeIcon icon={faServer} /> Server Details
-                            </>
-                          )}
-                          {route.name === 'Console' && (
-                            <>
-                              <FontAwesomeIcon icon={faTerminal} /> Console
+                              <FontAwesomeIcon icon={faServer} />  Server Details
                             </>
                           )}
                           {route.name === 'Schedules' && (
                             <>
-                              <FontAwesomeIcon icon={faThLarge} /> Schedules
+                              <FontAwesomeIcon icon={faThLarge} />  Schedules
                             </>
                           )}
                          {route.name === 'Startup' && (
                             <>
-                              <FontAwesomeIcon icon={faRocket} /> Startup
+                              <FontAwesomeIcon icon={faRocket} />  Startup
                             </>
                           )}
                           {route.name === 'Activity' && (
                             <>
-                              <FontAwesomeIcon icon={faClock} /> Activity
+                              <FontAwesomeIcon icon={faClock} />  Activity
                             </>
                           )}
                           {/* Add more conditions for other icons */}
