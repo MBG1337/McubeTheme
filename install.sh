@@ -23,11 +23,17 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
     rm /var/www/pterodactyl/resources/views/admin/index.blade.php
     rm /var/www/pterodactyl/resources/scripts/routers/ServerRouter.tsx
+    rm /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
+    rm /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
+    rm /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
     mv resources/scripts/index.blade.php /var/www/pterodactyl/resources/views/admin
     mv resources/scripts/routers/ServerRouter.tsx /var/www/pterodactyl/resources/scripts/routers/ServerRouter.tsx
+    mv resources/scripts/components/auth/LoginContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
+    mv resources/scripts/components/auth/LoginContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
+    mv public/themes/pterodactyl/css/pterodacty.css /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
     
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     apt update
