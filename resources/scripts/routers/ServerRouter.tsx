@@ -93,7 +93,7 @@ export default () => {
                           {/* Use the FontAwesome icon as follows */}
                           {route.name === 'Console' && (
                             <>
-                              <FontAwsomeIcon icon={faTerminal} />  Console
+                              <FontAwesomeIcon icon={faTerminal} />  Console
                             </>
                           )}
                           {route.name === 'Settings' && (
