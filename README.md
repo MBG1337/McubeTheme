@@ -1,14 +1,18 @@
 # MineCube Theme
 
 # Theme Preview
-![Preview 1](https://media.discordapp.net/attachments/1132986922000728104/1133810285052960919/image.png?width=1380&height=671)
-![Preview 2](https://media.discordapp.net/attachments/1132986922000728104/1133810611197857793/image.png?width=1396&height=671)
-![Preview 3](https://github.com/MBG1337/McubeTheme/assets/108623200/bf44ce29-216b-4d4a-a5c1-5a633102100b)
+
+**Client Area**
+![image](https://github.com/MBG1337/McubeTheme/assets/108623200/1b682be2-3e65-4775-a9de-9e8e063808ce)
+![image](https://github.com/MBG1337/McubeTheme/assets/108623200/9981bb32-ce96-4c39-97e0-b8e1ab29db64)
+![image](https://github.com/MBG1337/McubeTheme/assets/108623200/28bcc885-53dd-4f98-818f-bd6c20fcb325)
+
+**Admin Area**
+![image](https://github.com/MBG1337/McubeTheme/assets/108623200/0aaccc5e-cf2c-48dc-9286-3dff9c21d74b)
 
 
 # Hosts using this
-
-[MineCube](https://discord.gg/WvzNPpKr)
+TheHidden.tech (Coming soon.)
 
 `Want your host to be here? Dm me on discord @mbgx`
 
@@ -16,7 +20,7 @@
 
 Go to your vps where the panel is hosted and run
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/MBG-Codes-You/McubeTheme/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/MBG1337/McubeTheme/main/install.sh)
  ```
 **⚠️ use `sudo su` if you are not root**
 
