@@ -44,8 +44,6 @@ installTheme(){
 
     cd /var/www/pterodactyl
     yarn build:production
-    sudo php artisan optimize:clear
-    clear
     echo "(っ◔◡◔)っ ♥ Thank you for installing the theme ♥"
 }
 
@@ -72,7 +70,6 @@ restoreBackUp(){
 
     cd /var/www/pterodactyl
     yarn build:production
-    sudo php artisan optimize:clear
 }
                                                                                                                            
 printf "${blue}  ██████   ██████  ███                        █████████             █████                
