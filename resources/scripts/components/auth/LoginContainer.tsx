@@ -75,11 +75,11 @@ const LoginContainer = ({ history }: RouteComponentProps) => {
         >
             {({ isSubmitting, setSubmitting, submitForm }) => (
                 <LoginFormContainer title={'Login to Continue'} css={tw`w-full flex`}>
-                    <div css={tw`text-center text-white`}> 
-                    <Field light type={'text'} label={'Username or Email'} name={'username'} disabled={isSubmitting} />
+                    <div css={tw`text-left text-white`}> 
+                    <Field dark type={'text'} label={'Username or Email'} name={'username'} disabled={isSubmitting} />
                     </div>
-                    <div css={tw`mt-6 text-white text-center`}>
-                        <Field light type={'password'} label={'Password'} name={'password'} disabled={isSubmitting} />
+                    <div css={tw`mt-6 text-white text-left`}>
+                        <Field dark type={'password'} label={'Password'} name={'password'} disabled={isSubmitting} />
                     </div>
                     <div css={tw`mt-6`}>
                         <Button type={'submit'} size={'xlarge'} isLoading={isSubmitting} disabled={isSubmitting}>
