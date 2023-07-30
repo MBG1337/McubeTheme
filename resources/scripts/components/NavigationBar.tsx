@@ -85,7 +85,7 @@ export default () => {
     <>
       <Navigation>
         <Hidden>
-          <NavLink to={'/'} css={tw`select-none flex justify-center hidden sm:grid w-full mt-4 text-bold text-white text-2xl`}>
+          <NavLink to={'/'} css={tw`select-none flex justify-center hidden sm:grid w-full mt-4 text-white text-2xl`}>
           <span>{name}</span>
           </NavLink>
           <div css={tw`flex w-full justify-center mt-2`}>
