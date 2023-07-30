@@ -27,9 +27,6 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
     rm /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
     rm /var/www/pterodactyl/tailwind.config.js
-    rm /var/www/pterodactyl/resources/scripts/components/NavigationBar.tsx
-    rm /var/www/pterodactyl/resources/scripts/components/elements/SubNavigation.tsx
-    rm /var/www/pterodactyl/resources/scripts/components/elements/ContentContainer.tsx
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
@@ -39,9 +36,6 @@ installTheme(){
     mv resources/scripts/components/auth/LoginFormContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
     mv public/themes/pterodactyl/pterodactyl.css /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
     mv tailwind.config.js /var/www/pterodactyl/tailwind.config.js
-    mv resources/scripts/components/NavigationBar.tsx /var/www/pterodactyl/resources/scripts/components/NavigationBar.tsx
-    mv resources/scripts/components/elements/SubNavigation.tsx /var/www/pterodactyl/resources/scripts/components/elements/SubNavigation.tsx
-    mv resources/scripts/components/elements/ContentContainer.tsx /var/www/pterodactyl/resources/scripts/components/elements/ContentContainer.tsx
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
    
     apt update
@@ -78,6 +72,7 @@ restoreBackUp(){
 
     cd /var/www/pterodactyl
     yarn build:production
+    clear
 }
                                                                                                                            
 printf "${blue}  ██████   ██████  ███                        █████████             █████                
