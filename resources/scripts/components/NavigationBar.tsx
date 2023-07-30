@@ -11,8 +11,7 @@ import http from '@/api/http';
 import SpinnerOverlay from '@/components/elements/SpinnerOverlay';
 import { useState } from 'react';
 import Can from '@/components/elements/Can';
-import { ServerContext } from '@/state/server';
-import ToolsBar from '@/routers/ServerToolsBar'
+import { ServerContext } from '@/state/server'
 
 const Hidden = styled.div`
 justify: center
