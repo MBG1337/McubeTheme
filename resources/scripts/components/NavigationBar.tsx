@@ -12,7 +12,7 @@ import SpinnerOverlay from '@/components/elements/SpinnerOverlay';
 import { useState } from 'react';
 import Can from '@/components/elements/Can';
 import { ServerContext } from '@/state/server';
-import ToolsBar from '@/routers/ServerRouter.tsx
+import ToolsBar from '@/routers/ServerRouter'
 
 const Hidden = styled.div`
 justify: center
