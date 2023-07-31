@@ -1,4 +1,3 @@
-import TransferListener from '@/components/server/TransferListener';
 import React, { useEffect, useState } from 'react';
 import { NavLink, Route, Switch, useRouteMatch } from 'react-router-dom';
 import NavigationBar from '@/components/NavigationBar';
@@ -13,6 +12,7 @@ import { httpErrorToHuman } from '@/api/http';
 import { useStoreState } from 'easy-peasy';
 import SubNavigation from '@/components/elements/SubNavigation';
 import InstallListener from '@/components/server/InstallListener';
+import TransferListener from '@/components/server/TransferListener'; // Add TransferListener component
 import ErrorBoundary from '@/components/elements/ErrorBoundary';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
@@ -21,108 +21,178 @@ import ConflictStateRenderer from '@/components/server/ConflictStateRenderer';
 import PermissionRoute from '@/components/elements/PermissionRoute';
 import routes from '@/routers/routes';
 
+// Import Font Awesome icons that you want to use
+import {
+  faCogs,
+  faDatabase,
+  faUserFriends,
+  faFileAlt,
+  faGlobe,
+  faBuilding,
+  faReply,
+  faServer,
+  faClock,
+  faThLarge,
+  faRocket,
+  faTerminal,
+} from '@fortawesome/free-solid-svg-icons';
 export default () => {
-    const match = useRouteMatch<{ id: string }>();
-    const location = useLocation();
+  const match = useRouteMatch<{ id: string }>();
+  const location = useLocation();
 
-    const rootAdmin = useStoreState((state) => state.user.data!.rootAdmin);
-    const [error, setError] = useState('');
+  const rootAdmin = useStoreState((state) => state.user.data!.rootAdmin);
+  const [error, setError] = useState('');
 
-    const id = ServerContext.useStoreState((state) => state.server.data?.id);
-    const uuid = ServerContext.useStoreState((state) => state.server.data?.uuid);
-    const inConflictState = ServerContext.useStoreState((state) => state.server.inConflictState);
-    const serverId = ServerContext.useStoreState((state) => state.server.data?.internalId);
-    const getServer = ServerContext.useStoreActions((actions) => actions.server.getServer);
-    const clearServerState = ServerContext.useStoreActions((actions) => actions.clearServerState);
+  const id = ServerContext.useStoreState((state) => state.server.data?.id);
+  const uuid = ServerContext.useStoreState((state) => state.server.data?.uuid);
+  const inConflictState = ServerContext.useStoreState((state) => state.server.inConflictState);
+  const serverId = ServerContext.useStoreState((state) => state.server.data?.internalId);
+  const getServer = ServerContext.useStoreActions((actions) => actions.server.getServer);
+  const clearServerState = ServerContext.useStoreActions((actions) => actions.clearServerState);
 
-    const to = (value: string, url = false) => {
-        if (value === '/') {
-            return url ? match.url : match.path;
-        }
-        return `${(url ? match.url : match.path).replace(/\/*$/, '')}/${value.replace(/^\/+/, '')}`;
+  const to = (value: string, url = false) => {
+    if (value === '/') {
+      return url ? match.url : match.path;
+    }
+    return `${(url ? match.url : match.path).replace(/\/*$/, '')}/${value.replace(/^\/+/, '')}`;
+  };
+
+  useEffect(() => {
+    setError('');
+
+    getServer(match.params.id).catch((error) => {
+      console.error(error);
+      setError(httpErrorToHuman(error));
+    });
+
+    return () => {
+      clearServerState();
     };
+  }, [match.params.id]);
 
-    useEffect(
-        () => () => {
-            clearServerState();
-        },
-        []
-    );
-
-    useEffect(() => {
-        setError('');
-
-        getServer(match.params.id).catch((error) => {
-            console.error(error);
-            setError(httpErrorToHuman(error));
-        });
-
-        return () => {
-            clearServerState();
-        };
-    }, [match.params.id]);
-
-    return (
-        <React.Fragment key={'server-router'}>
-            <NavigationBar />
-            {!uuid || !id ? (
-                error ? (
-                    <ServerError message={error} />
-                ) : (
-                    <Spinner size={'large'} centered />
-                )
-            ) : (
-                <>
-                    <CSSTransition timeout={150} classNames={'fade'} appear in>
-                        <SubNavigation>
-                            <div>
-                                {routes.server
-                                    .filter((route) => !!route.name)
-                                    .map((route) =>
-                                        route.permission ? (
-                                            <Can key={route.path} action={route.permission} matchAny>
-                                                <NavLink to={to(route.path, true)} exact={route.exact}>
-                                                    {route.name}
-                                                </NavLink>
-                                            </Can>
-                                        ) : (
-                                            <NavLink key={route.path} to={to(route.path, true)} exact={route.exact}>
-                                                {route.name}
-                                            </NavLink>
-                                        )
-                                    )}
-                                {rootAdmin && (
-                                    // eslint-disable-next-line react/jsx-no-target-blank
-                                    <a href={`/admin/servers/view/${serverId}`} target={'_blank'}>
-                                        <FontAwesomeIcon icon={faExternalLinkAlt} />
-                                    </a>
-                                )}
-                            </div>
-                        </SubNavigation>
-                    </CSSTransition>
-                    <InstallListener />
-                    <TransferListener />
-                    <WebsocketHandler />
-                    {inConflictState && (!rootAdmin || (rootAdmin && !location.pathname.endsWith(`/server/${id}`))) ? (
-                        <ConflictStateRenderer />
+  return (
+    <React.Fragment key={'server-router'}>
+      <NavigationBar />
+      {!uuid || !id ? (
+        error ? (
+          <ServerError message={error} />
+        ) : (
+          <Spinner size={'large'} centered />
+        )
+      ) : (
+        <>
+          <CSSTransition timeout={150} classNames={'fade'} appear in>
+            <SubNavigation>
+              <div>
+                {routes.server
+                  .filter((route) => !!route.name)
+                  .map((route) =>
+                    route.permission ? (
+                      <Can key={route.path} action={route.permission} matchAny>
+                        <NavLink to={to(route.path, true)} exact={route.exact}>
+                          {/* Use the FontAwesome icon as follows */}
+                          {route.name === 'Console' && (
+                            <>
+                              <FontAwesomeIcon icon={faTerminal} />  Console
+                            </>
+                          )}
+                          {route.name === 'Settings' && (
+                            <>
+                              <FontAwesomeIcon icon={faCogs} />  Settings
+                            </>
+                          )}
+                          {route.name === 'Databases' && (
+                            <>
+                              <FontAwesomeIcon icon={faDatabase} />  Databases
+                            </>
+                          )}
+                          {route.name === 'Users' && (
+                            <>
+                              <FontAwesomeIcon icon={faUserFriends} />  Users
+                            </>
+                          )}
+                          {route.name === 'Files' && (
+                            <>
+                              <FontAwesomeIcon icon={faFileAlt} />  Files
+                            </>
+                          )}
+                          {route.name === 'Network' && (
+                            <>
+                              <FontAwesomeIcon icon={faGlobe} />  Network
+                            </>
+                          )}
+                          {route.name === 'Allocation' && (
+                            <>
+                              <FontAwesomeIcon icon={faBuilding} />  Allocation
+                            </>
+                          )}
+                          {route.name === 'Backups' && (
+                            <>
+                              <FontAwesomeIcon icon={faReply} />  Backups
+                            </>
+                          )}
+                          {route.name === 'Server Details' && (
+                            <>
+                              <FontAwesomeIcon icon={faServer} />  Server Details
+                            </>
+                          )}
+                          {route.name === 'Schedules' && (
+                            <>
+                              <FontAwesomeIcon icon={faThLarge} />  Schedules
+                            </>
+                          )}
+                         {route.name === 'Startup' && (
+                            <>
+                              <FontAwesomeIcon icon={faRocket} />  Startup
+                            </>
+                          )}
+                          {route.name === 'Activity' && (
+                            <>
+                              <FontAwesomeIcon icon={faClock} />  Activity
+                            </>
+                          )}
+                          {/* Add more conditions for other icons */}
+                        </NavLink>
+                      </Can>
                     ) : (
-                        <ErrorBoundary>
-                            <TransitionRouter>
-                                <Switch location={location}>
-                                    {routes.server.map(({ path, permission, component: Component }) => (
-                                        <PermissionRoute key={path} permission={permission} path={to(path)} exact>
-                                            <Spinner.Suspense>
-                                                <Component />
-                                            </Spinner.Suspense>
-                                        </PermissionRoute>
-                                    ))}
-                                    <Route path={'*'} component={NotFound} />
-                                </Switch>
-                            </TransitionRouter>
-                        </ErrorBoundary>
-                    )}
-                </>
-            )}
-        </React.Fragment>
-    );
+                      <NavLink key={route.path} to={to(route.path, true)} exact={route.exact}>
+                        {/* Add a space between the route name and the icon */}
+                        {route.name}
+                      </NavLink>
+                    )
+                  )}
+                {rootAdmin && (
+                  // eslint-disable-next-line react/jsx-no-target-blank
+                  <a href={`/admin/servers/view/${serverId}`} target={'_blank'}>
+                    <FontAwesomeIcon icon={faExternalLinkAlt} />
+                  </a>
+                )}
+              </div>
+            </SubNavigation>
+          </CSSTransition>
+          <InstallListener />
+          <TransferListener />
+          <WebsocketHandler />
+          {inConflictState && (!rootAdmin || (rootAdmin && !location.pathname.endsWith(`/server/${id}`))) ? (
+            <ConflictStateRenderer />
+          ) : (
+            <ErrorBoundary>
+              <TransitionRouter>
+                <Switch location={location}>
+                  {routes.server.map(({ path, permission, component: Component }) => (
+                    <PermissionRoute key={path} permission={permission} path={to(path)} exact>
+                      <Spinner.Suspense>
+                        <Component />
+                      </Spinner.Suspense>
+                    </PermissionRoute>
+                  ))}
+                  <Route path={'*'} component={NotFound} />
+                </Switch>
+              </TransitionRouter>
+            </ErrorBoundary>
+          )}
+        </>
+      )}
+    </React.Fragment>
+  );
 };
