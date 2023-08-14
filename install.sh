@@ -26,7 +26,6 @@ installTheme(){
     rm /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
     rm /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
     rm /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
-    rm /var/www/pterodactyl/tailwind.config.js
     mv resources/scripts/index.tsx /var/www/pterodactyl/resources/scripts/index.tsx
     mv resources/scripts/MineCube.css /var/www/pterodactyl/resources/scripts/MineCube.css
     mv resources/scripts/components/server/console/Console.tsx /var/www/pterodactyl/resources/scripts/components/server/console/Console.tsx
@@ -35,7 +34,6 @@ installTheme(){
     mv resources/scripts/components/auth/LoginContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginContainer.tsx
     mv resources/scripts/components/auth/LoginFormContainer.tsx /var/www/pterodactyl/resources/scripts/components/auth/LoginFormContainer.tsx
     mv public/themes/pterodactyl/pterodactyl.css /var/www/pterodactyl/public/themes/pterodactyl/css/pterodactyl.css
-    mv tailwind.config.js /var/www/pterodactyl/tailwind.config.js
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
    
     apt update
