@@ -50,7 +50,24 @@
     top: 0;
     z-index: -1;
 }
-
+.iTERJN {
+    display: flex;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    --tw-text-opacity: 1;
+    color: hsla(210,16%,82%,var(--tw-text-opacity));
+    -webkit-box-align: center;
+    align-items: center;
+    --tw-bg-opacity: 1;
+    background-color: #222339;
+    padding: 1rem;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    overflow: hidden;
+}
 .pterodactyl-login-box {
     background: rgba(0, 0, 0, 0.25);
     border-radius: 3px;
