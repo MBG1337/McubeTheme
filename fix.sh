@@ -15,7 +15,7 @@ fix() {
 
 echo "Welcome to MineCube Theme Fixer!"
 echo "This script will fix the theme if you have an problem with it."
-echo "If you have any problem with the theme, please contact me on Discord: MBG#1337"
+echo "If you have any problem with the theme, please contact me on Discord: mbgx"
 
 while true; do
     read -p "Are you sure [y/N]? " yn
