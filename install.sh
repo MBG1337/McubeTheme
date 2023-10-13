@@ -44,6 +44,7 @@ installTheme(){
 
     cd /var/www/pterodactyl
     yarn build:production
+    clear
     echo "(っ◔◡◔)っ ♥ Thank you for installing the theme ♥"
 }
 
