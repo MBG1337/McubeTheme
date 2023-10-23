@@ -11,6 +11,14 @@ fi
 clear
 
 installTheme(){
+
+
+   os_name=$(cat /etc/os-release | grep '^NAME=' | sed 's/NAME=//')
+
+     # Check if the OS name contains "Ubuntu"
+    if [[ $os_name == *"Ubuntu"* ]]; then
+    echo "This is Ubuntu. Proceeding with the script."
+
     cd /var/www/
     tar -cvf McubeTheme.tar.gz pterodactyl
     echo "Installing MineCube Official Theme...Please wait..."
@@ -46,6 +54,10 @@ installTheme(){
     yarn build:production
     clear
     echo "(っ◔◡◔)っ ♥ Thank you for installing the theme ♥"
+else
+    echo "This is not Ubuntu. Stopping the script."
+    exit 1
+fi
 }
 
 installThemeQuestion(){
