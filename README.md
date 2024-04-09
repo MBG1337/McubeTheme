@@ -1,3 +1,5 @@
+# Discontinued - As of 4/9/24, MineCube Theme will no longer be updated, unless someone wants to maintain it, you can contact me on discord, @mbgx. 
+
 # MineCube Theme
 
 # Theme Preview
